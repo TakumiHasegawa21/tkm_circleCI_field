@@ -5,9 +5,27 @@ executors:
     macos:
       xcode: "15.2.0"  # 使用するXcodeのバージョンを指定
 
+commands:
+  sayhello:
+    description: "Say Hello"
+    parameters:
+      to:
+        type: string
+        default: "World"
+    steps:
+      - run:
+          name: Say Hello
+          command: echo Hello << parameters.to >>
+
 jobs:
   build:
-    docker:
-      - image: cimg/node:lts
+    executor: macos-executor
     steps:
-      - run: echo "hello world"
+      - sayhello:
+          to: Everyone
+
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+      - build
