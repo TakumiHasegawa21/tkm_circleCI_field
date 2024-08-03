@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		423B95D133BF1F6965A2978A /* Pods_tkm_circleCI_field.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70FB0EA85F45EDAA697BBE08 /* Pods_tkm_circleCI_field.framework */; };
 		CB1241882C5DC83600B50D89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1241872C5DC83600B50D89 /* AppDelegate.swift */; };
 		CB12418A2C5DC83600B50D89 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1241892C5DC83600B50D89 /* SceneDelegate.swift */; };
 		CB12418C2C5DC83600B50D89 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB12418B2C5DC83600B50D89 /* ViewController.swift */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		70FB0EA85F45EDAA697BBE08 /* Pods_tkm_circleCI_field.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tkm_circleCI_field.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7EFD5B208A453D64082B35E8 /* Pods-tkm_circleCI_field.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tkm_circleCI_field.release.xcconfig"; path = "Target Support Files/Pods-tkm_circleCI_field/Pods-tkm_circleCI_field.release.xcconfig"; sourceTree = "<group>"; };
+		C644087453E31AE5B68CDC25 /* Pods-tkm_circleCI_field.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tkm_circleCI_field.debug.xcconfig"; path = "Target Support Files/Pods-tkm_circleCI_field/Pods-tkm_circleCI_field.debug.xcconfig"; sourceTree = "<group>"; };
 		CB1241842C5DC83600B50D89 /* tkm_circleCI_field.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tkm_circleCI_field.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB1241872C5DC83600B50D89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB1241892C5DC83600B50D89 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,17 +35,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				423B95D133BF1F6965A2978A /* Pods_tkm_circleCI_field.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1685F37B70E53FF07B9ED813 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				70FB0EA85F45EDAA697BBE08 /* Pods_tkm_circleCI_field.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6E31FC6E7B047D5EDBADA635 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C644087453E31AE5B68CDC25 /* Pods-tkm_circleCI_field.debug.xcconfig */,
+				7EFD5B208A453D64082B35E8 /* Pods-tkm_circleCI_field.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		CB12417B2C5DC83600B50D89 = {
 			isa = PBXGroup;
 			children = (
 				CB1241862C5DC83600B50D89 /* tkm_circleCI_field */,
 				CB1241852C5DC83600B50D89 /* Products */,
+				6E31FC6E7B047D5EDBADA635 /* Pods */,
+				1685F37B70E53FF07B9ED813 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,6 +99,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CB1241982C5DC83700B50D89 /* Build configuration list for PBXNativeTarget "tkm_circleCI_field" */;
 			buildPhases = (
+				2B77DBCA76AFB187EE92AD1B /* [CP] Check Pods Manifest.lock */,
 				CB1241802C5DC83600B50D89 /* Sources */,
 				CB1241812C5DC83600B50D89 /* Frameworks */,
 				CB1241822C5DC83600B50D89 /* Resources */,
@@ -132,6 +158,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2B77DBCA76AFB187EE92AD1B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-tkm_circleCI_field-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CB1241802C5DC83600B50D89 /* Sources */ = {
@@ -287,6 +338,7 @@
 		};
 		CB1241992C5DC83700B50D89 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C644087453E31AE5B68CDC25 /* Pods-tkm_circleCI_field.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -315,6 +367,7 @@
 		};
 		CB12419A2C5DC83700B50D89 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7EFD5B208A453D64082B35E8 /* Pods-tkm_circleCI_field.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

@@ -1,0 +1,6 @@
+framework module Pods_tkm_circleCI_field {
+  umbrella header "Pods-tkm_circleCI_field-umbrella.h"
+
+  export *
+  module * { export * }
+}
