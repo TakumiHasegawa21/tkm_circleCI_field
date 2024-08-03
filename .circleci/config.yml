@@ -11,3 +11,10 @@ jobs:
       - image: cimg/node:lts
     steps:
       - run: echo "hello world"
+
+## workflowを明示的に定義しない場合はデフォルトで以下のworkflowが適用される
+## workflows:
+##   version: 2.1
+##   workflow:
+##     jobs:
+##       -build
