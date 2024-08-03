@@ -1,14 +1,13 @@
 version: 2.1
 
-executors:
+executors: # jobの実行環境を共通化し、使いまわせるようにしたもの
   macos-executor:
     macos:
       xcode: "15.2.0"  # 使用するXcodeのバージョンを指定
 
 jobs:
   build:
-    docker:
-      - image: cimg/node:lts
+    executor: macos-executor
     steps:
       - run: echo "hello world"
 
