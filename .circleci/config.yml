@@ -1,15 +1,16 @@
 version: 2.1
-
-executors: # jobの実行環境を共通化し、使いまわせるようにしたもの
-  macos-executor:
-    macos:
-      xcode: "15.2.0"  # 使用するXcodeのバージョンを指定
+      
+commands: # stepsを共通化し、使いまわせるようにしたもの
+  sayhello:
+    steps:
+      - run: echo "hello world"
 
 jobs:
   build:
-    executor: macos-executor
+    docker:
+      - image: cimg/node:lts
     steps:
-      - run: echo "hello world"
+      - sayhell
 
 ## workflowを明示的に定義しない場合はデフォルトで以下のworkflowが適用される
 ## workflows:
