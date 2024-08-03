@@ -1,6 +1,11 @@
 version: 2.1
-      
-commands: # stepsを共通化し、使いまわせるようにしたもの
+
+executors:
+  macos-executor:
+    macos:
+      xcode: "15.2.0"  # 使用するXcodeのバージョンを指定
+
+commands:
   sayhello:
     description: "Say Hello"
     parameters:
@@ -8,19 +13,19 @@ commands: # stepsを共通化し、使いまわせるようにしたもの
         type: string
         default: "World"
     steps:
-      - run: echo Hello << parameters.to >>
+      - run:
+          name: Say Hello
+          command: echo Hello << parameters.to >>
 
 jobs:
   build:
-    docker:
-      - image: cimg/node:lts
+    executor: macos-executor
     steps:
       - sayhello:
           to: Everyone
 
-## workflowを明示的に定義しない場合はデフォルトで以下のworkflowが適用される
-## workflows:
-##   version: 2.1
-##   workflow:
-##     jobs:
-##       -build
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+      - build
