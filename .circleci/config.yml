@@ -4,5 +4,5 @@ jobs:
   build:
     docker:
       - image: cimg/node:lts
-    step:
+    steps:
       - run: echo "hello world"
