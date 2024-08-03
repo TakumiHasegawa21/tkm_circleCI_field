@@ -1,19 +1,13 @@
 workflows:
   version: 2.1
-  build-and-deploy:
-    jobs:
-      - build:
-        filters: # ワークフローを実行したいコミットタグやブランチを指定する際に使用
-          tags:
-            only: /.*/
-      - deploy:
-        requires:
-          -build
-        filters:
-          tags:
-            only: /^v.*/
+  build-workflows:
+    triggers:
+      - schedule:
+        cron: "0 0 * * *" # developブランチで毎日0時00分(UTC)に実行する
+        fileters:
           branches:
-            ignore: /.*/
+            only:
+              - develop:
 
 ##commands: # stepsを共通化し、使いまわせるようにしたもの
 ##  sayhello:
