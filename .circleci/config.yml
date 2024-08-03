@@ -2,15 +2,21 @@ version: 2.1
       
 commands: # stepsを共通化し、使いまわせるようにしたもの
   sayhello:
+    description: "Say Hello"
+    parameters:
+      to:
+        type: string
+        default: "World"
     steps:
-      - run: echo "hello world"
+      - run: echo Hello << parameters.to >>
 
 jobs:
   build:
     docker:
       - image: cimg/node:lts
     steps:
-      - sayhello
+      - sayhello:
+          to: Everyone
 
 ## workflowを明示的に定義しない場合はデフォルトで以下のworkflowが適用される
 ## workflows:
