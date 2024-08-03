@@ -1,31 +1,22 @@
-workflows:
-  version: 2.1
-  build-workflows:
-    triggers:
-      - schedule:
-        cron: "0 0 * * *" # developブランチで毎日0時00分(UTC)に実行する
-        fileters:
-          branches:
-            only:
-              - develop:
+version: 2.1
+      
+commands: # stepsを共通化し、使いまわせるようにしたもの
+  sayhello:
+    description: "Say Hello"
+    parameters:
+      to:
+        type: string
+        default: "World"
+    steps:
+      - run: echo Hello << parameters.to >>
 
-##commands: # stepsを共通化し、使いまわせるようにしたもの
-##  sayhello:
-##    description: "Say Hello"
-##    parameters:
-##      to:
-##        type: string
-##        default: "World"
-##    steps:
-##      - run: echo Hello << parameters.to >>
-
-##jobs:
-##  build:
-##    docker:
-##      - image: cimg/node:lts
-##    steps:
-##      - sayhello:
-##          to: Everyone
+jobs:
+  build:
+    docker:
+      - image: cimg/node:lts
+    steps:
+      - sayhello:
+          to: Everyone
 
 ## workflowを明示的に定義しない場合はデフォルトで以下のworkflowが適用される
 ## workflows:
