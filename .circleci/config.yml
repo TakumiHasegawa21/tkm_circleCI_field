@@ -1,5 +1,10 @@
 version: 2.1
 
+executors:
+  macos-executor:
+    macos:
+      xcode: "15.2.0"  # 使用するXcodeのバージョンを指定
+
 jobs:
   build:
     docker:
