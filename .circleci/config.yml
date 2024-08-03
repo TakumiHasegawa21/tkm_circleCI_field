@@ -10,7 +10,7 @@ jobs:
     docker:
       - image: cimg/node:lts
     steps:
-      - sayhell
+      - sayhello
 
 ## workflowを明示的に定義しない場合はデフォルトで以下のworkflowが適用される
 ## workflows:
