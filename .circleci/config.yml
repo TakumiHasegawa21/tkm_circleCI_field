@@ -10,10 +10,10 @@ jobs:
     docker:
       - image: cimg/node:lts
         environment: # プライマリイメージの環境変数
-            NODE_ENV: production
+          NODE_ENV: production
       - image: circleci/postgres:9.6
         environment: # サービスイメージの環境変数
-            POSTGRES_USER: root
+          POSTGRES_USER: root
     steps:
       - run:
           name: プライマリイメージで定義された環境変数を利用する
