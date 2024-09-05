@@ -11,11 +11,10 @@ jobs:
       - image: cimg/node:lts
     steps:
       - run:
-          name: ビルトイン環境変数の利用
-          command: |
-            echo "CI is '$CI'"
-            echo "CIRCLE_SHA1 is '$CIRCLE_SHA1'"
-            echo "CIRCLE_BRANCH is '$CIRCLE_BRANCH'"
-            echo "CIRCLE_PULL_REQUEST: $CIRCLE_PULL_REQUEST"
-            echo "CIRCLE_PROJECT_USERNAME: $CIRCLE_PROJECT_USERNAME"
-            echo "CIRCLE_PROJECT_REPONAME: $CIRCLE_PROJECT_REPONAME"
+          name: ステップで定義された環境変数を利用する
+          environment:
+            NODE_ENV: production
+          command: echo "NODE_ENV is '$NODE_ENV'"
+     - run:
+         name: 環境変数は受け継がれない
+         command: echo "NODE_ENV is '$NODE_ENV'"
