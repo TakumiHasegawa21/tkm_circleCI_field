@@ -15,7 +15,7 @@ jobs:
           command: |
            curl -X POST \
            -H 'Content-type:application/json' \
-           --data "{'text':'Hi!'}" ${MY_SLACK_WEBHOOK}
+           --data "{'text':'Hi!'}" ${IOS_SLACK_WEBHOOK}
 
 workflows:
   version: 2
