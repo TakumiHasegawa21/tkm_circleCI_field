@@ -16,3 +16,6 @@ jobs:
             echo "CI is '$CI'"
             echo "CIRCLE_SHA1 is '$CIRCLE_SHA1'"
             echo "CIRCLE_BRANCH is '$CIRCLE_BRANCH'"
+            echo "CIRCLE_PULL_REQUEST: $CIRCLE_PULL_REQUEST"
+            echo "CIRCLE_PROJECT_USERNAME: $CIRCLE_PROJECT_USERNAME"
+            echo "CIRCLE_PROJECT_REPONAME: $CIRCLE_PROJECT_REPONAME"
