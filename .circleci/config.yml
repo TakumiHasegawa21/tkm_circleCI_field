@@ -9,14 +9,20 @@ jobs:
   build:
     docker:
       - image: cimg/node:lts
-    environment:
-      NODE_ENV: production
+        environment: # プライマリイメージの環境変数
+            NODE_ENV: production
+      - image: circleci/postgres:9.6
+        environment: # サービスイメージの環境変数
+            POSTGRES_USER: root
     steps:
       - run:
-          name: ジョブで定義された環境変数を利用する
+          name: プライマリイメージで定義された環境変数を利用する
           command: echo "NODE_ENV is '$NODE_ENV'"
       - run:
           name: ステップで同名の環境変数を定義すると上書きされる
           environment:
             NODE_ENV: test
           command: echo "NODE_ENV is '$NODE_ENV'"
+    　- run:
+          name: サービスイメージの環境変数はステップでは利用できない
+          command: echo "POSTGRES_USER is '$POSTGRES_USER'"
