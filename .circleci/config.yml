@@ -9,12 +9,14 @@ jobs:
   build:
     docker:
       - image: cimg/node:lts
+    environment:
+      NODE_ENV: production
     steps:
       - run:
-          name: ステップで定義された環境変数を利用する
-          environment:
-            NODE_ENV: production
+          name: ジョブで定義された環境変数を利用する
           command: echo "NODE_ENV is '$NODE_ENV'"
       - run:
-          name: 環境変数は受け継がれない
+          name: ステップで同名の環境変数を定義すると上書きされる
+          environment:
+            NODE_ENV: test
           command: echo "NODE_ENV is '$NODE_ENV'"
