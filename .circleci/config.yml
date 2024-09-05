@@ -6,7 +6,7 @@ executors:
       xcode: "15.2.0"  # 使用するXcodeのバージョンを指定
 
 jobs:
-  build:
+  slack_test:
     docker:
       - image: cimg/node:lts
     steps:
