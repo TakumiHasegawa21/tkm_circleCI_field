@@ -9,14 +9,17 @@ jobs:
   build:
     docker:
       - image: cimg/node:lts
-    environment:
-      NODE_ENV: production
     steps:
       - run:
-          name: ジョブで定義された環境変数を利用する
-          command: echo "NODE_ENV is '$EXAMPLE_VARIABLE'"
-      - run:
-          name: ステップで同名の環境変数を定義すると上書きされる
-          environment:
-            NODE_ENV: test
-          command: echo "NODE_ENV is '$EXAMPLE_VARIABLE'"
+          name: SlackにメッセージをPOSTする
+          command: |
+           curl -X POST \
+           -H 'Content-type:application/json' \
+           --data "{'text':'Hi!'}" ${SLACK_WEBHOOK}
+
+workflows:
+  version: 2
+  main:
+    jobs:
+      - slack_test:
+          context: SLACK_INTEGRATION
