@@ -10,4 +10,9 @@ jobs:
     docker:
       - image: cimg/node:lts
     steps:
-      - run: echo "hello world"
+      - run:
+          name: ビルトイン環境変数の利用
+          command: |
+            echo "CI is '$CI'"
+            echo "CIRCLE_SHA1 is '$CIRCLE_SHA1'"
+            echo "CIRCLE_BRANCH is '$CIRCLE_BRANCH'"
