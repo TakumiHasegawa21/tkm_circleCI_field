@@ -1,24 +1,22 @@
 version: 2.1
 
+orbs:
+  pr-comment: benjlevesque/pr-comment@0.1.9
+
 jobs:
   pull_request_comment_test:
     docker:
-      - image: ghcr.io/cli/cli:latest
+      - image: cimg/node:lts
     steps:
       - checkout
-      - run:
-          name: Authenticate GitHub CLI
-          command: |
-            echo "${GITHUB_TOKEN}" | gh auth login --with-token
-      - run:
-          name: Post PR comment
-          command: |
-            gh pr comment $CIRCLE_PR_NUMBER --body "ビルド完了: ${CIRCLE_BUILD_URL}"
+      - pr-comment/pr-comment:
+          comment: |
+           Githubプルリクエストにコメント
+           ${CIRCLE_BUILD_URL}
+          maxComments: 10
+
 workflows:
   version: 2
   main:
     jobs:
-      - pull_request_comment_test:
-          filters:
-            branches:
-              only: /.*/
+      - pull_request_comment_test
