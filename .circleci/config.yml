@@ -11,12 +11,15 @@ jobs:
       - checkout
       - pr-comment/pr-comment:
           comment: |
-           Githubプルリクエストにコメント
-           ${CIRCLE_BUILD_URL}
+            Githubプルリクエストにコメント
+            ${CIRCLE_BUILD_URL}
           maxComments: 10
 
 workflows:
   version: 2
   main:
     jobs:
-      - pull_request_comment_test
+      - pull_request_comment_test:
+          filters:
+            pull_requests:
+              only: /.*/
