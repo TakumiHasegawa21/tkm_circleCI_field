@@ -1,25 +1,19 @@
 version: 2.1
 
-orbs:
-  pr-comment: benjlevesque/pr-comment@0.1.4
-
 jobs:
   pull_request_comment_test:
     docker:
-      - image: cimg/node:lts
+      - image: cimg/ruby:2.6  # Ruby 2.6 のイメージを使用
     steps:
       - checkout
       - run:
-          name: Install Ruby
+          name: Install dependencies
           command: |
-            sudo apt-get update
-            sudo apt-get install -y ruby-full
-      - pr-comment/pr-comment:
-          comment: |
-            Githubプルリクエストにコメント
-            ${CIRCLE_BUILD_URL}
-          maxComments: 10
-
+            gem install ghi
+      - run:
+          name: Post PR comment
+          command: |
+            ghi pr comment ${PR_ID} "Githubプルリクエストにコメント ${CIRCLE_BUILD_URL}"
 workflows:
   version: 2
   main:
