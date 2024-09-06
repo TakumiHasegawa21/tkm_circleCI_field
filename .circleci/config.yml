@@ -1,13 +1,22 @@
 version: 2.1
 
-executors:
-  macos-executor:
-    macos:
-      xcode: "15.2.0"  # 使用するXcodeのバージョンを指定
+orbs:
+  pr-comment: benjlevesque/pr-comment@0.1.4
 
 jobs:
-  build:
+  pull_request_comment_test:
     docker:
       - image: cimg/node:lts
     steps:
-      - run: echo "hello world"
+      - checkout
+      - pr-comment/pr-comment:
+          comment: |
+           Githubプルリクエストにコメント
+           ${CIRCLE_BUILD_URL}
+          maxComments: 10
+
+workflows:
+  version: 2
+  main:
+    jobs:
+      - pull_request_comment_test
