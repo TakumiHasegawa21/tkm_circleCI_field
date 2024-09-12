@@ -14,7 +14,18 @@
 		CB12418F2C5DC83600B50D89 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB12418D2C5DC83600B50D89 /* Main.storyboard */; };
 		CB1241912C5DC83700B50D89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB1241902C5DC83700B50D89 /* Assets.xcassets */; };
 		CB1241942C5DC83700B50D89 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB1241922C5DC83700B50D89 /* LaunchScreen.storyboard */; };
+		CB4D41CE2C92CA700012187E /* tkm_circleCI_fieldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4D41CD2C92CA700012187E /* tkm_circleCI_fieldTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CB4D41CF2C92CA700012187E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB12417C2C5DC83600B50D89 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CB1241832C5DC83600B50D89;
+			remoteInfo = tkm_circleCI_field;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		70FB0EA85F45EDAA697BBE08 /* Pods_tkm_circleCI_field.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tkm_circleCI_field.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -28,6 +39,8 @@
 		CB1241902C5DC83700B50D89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB1241932C5DC83700B50D89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CB1241952C5DC83700B50D89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB4D41CB2C92CA700012187E /* tkm_circleCI_fieldTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tkm_circleCI_fieldTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB4D41CD2C92CA700012187E /* tkm_circleCI_fieldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tkm_circleCI_fieldTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +49,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				423B95D133BF1F6965A2978A /* Pods_tkm_circleCI_field.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB4D41C82C92CA700012187E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,7 +76,6 @@
 				C644087453E31AE5B68CDC25 /* Pods-tkm_circleCI_field.debug.xcconfig */,
 				7EFD5B208A453D64082B35E8 /* Pods-tkm_circleCI_field.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -64,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				CB1241862C5DC83600B50D89 /* tkm_circleCI_field */,
+				CB4D41CC2C92CA700012187E /* tkm_circleCI_fieldTests */,
 				CB1241852C5DC83600B50D89 /* Products */,
 				6E31FC6E7B047D5EDBADA635 /* Pods */,
 				1685F37B70E53FF07B9ED813 /* Frameworks */,
@@ -74,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				CB1241842C5DC83600B50D89 /* tkm_circleCI_field.app */,
+				CB4D41CB2C92CA700012187E /* tkm_circleCI_fieldTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -90,6 +111,14 @@
 				CB1241952C5DC83700B50D89 /* Info.plist */,
 			);
 			path = tkm_circleCI_field;
+			sourceTree = "<group>";
+		};
+		CB4D41CC2C92CA700012187E /* tkm_circleCI_fieldTests */ = {
+			isa = PBXGroup;
+			children = (
+				CB4D41CD2C92CA700012187E /* tkm_circleCI_fieldTests.swift */,
+			);
+			path = tkm_circleCI_fieldTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -113,6 +142,24 @@
 			productReference = CB1241842C5DC83600B50D89 /* tkm_circleCI_field.app */;
 			productType = "com.apple.product-type.application";
 		};
+		CB4D41CA2C92CA700012187E /* tkm_circleCI_fieldTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB4D41D32C92CA700012187E /* Build configuration list for PBXNativeTarget "tkm_circleCI_fieldTests" */;
+			buildPhases = (
+				CB4D41C72C92CA700012187E /* Sources */,
+				CB4D41C82C92CA700012187E /* Frameworks */,
+				CB4D41C92C92CA700012187E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CB4D41D02C92CA700012187E /* PBXTargetDependency */,
+			);
+			name = tkm_circleCI_fieldTests;
+			productName = tkm_circleCI_fieldTests;
+			productReference = CB4D41CB2C92CA700012187E /* tkm_circleCI_fieldTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -120,11 +167,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1520;
+				LastSwiftUpdateCheck = 1530;
 				LastUpgradeCheck = 1520;
 				TargetAttributes = {
 					CB1241832C5DC83600B50D89 = {
 						CreatedOnToolsVersion = 15.2;
+					};
+					CB4D41CA2C92CA700012187E = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = CB1241832C5DC83600B50D89;
 					};
 				};
 			};
@@ -142,6 +193,7 @@
 			projectRoot = "";
 			targets = (
 				CB1241832C5DC83600B50D89 /* tkm_circleCI_field */,
+				CB4D41CA2C92CA700012187E /* tkm_circleCI_fieldTests */,
 			);
 		};
 /* End PBXProject section */
@@ -154,6 +206,13 @@
 				CB1241942C5DC83700B50D89 /* LaunchScreen.storyboard in Resources */,
 				CB1241912C5DC83700B50D89 /* Assets.xcassets in Resources */,
 				CB12418F2C5DC83600B50D89 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB4D41C92C92CA700012187E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,7 +254,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CB4D41C72C92CA700012187E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB4D41CE2C92CA700012187E /* tkm_circleCI_fieldTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CB4D41D02C92CA700012187E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CB1241832C5DC83600B50D89 /* tkm_circleCI_field */;
+			targetProxy = CB4D41CF2C92CA700012187E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		CB12418D2C5DC83600B50D89 /* Main.storyboard */ = {
@@ -394,6 +469,44 @@
 			};
 			name = Release;
 		};
+		CB4D41D12C92CA700012187E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = S483QP3A9R;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gmail.takumi77hase.tkm-circleCI-fieldTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/tkm_circleCI_field.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/tkm_circleCI_field";
+			};
+			name = Debug;
+		};
+		CB4D41D22C92CA700012187E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = S483QP3A9R;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gmail.takumi77hase.tkm-circleCI-fieldTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/tkm_circleCI_field.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/tkm_circleCI_field";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -411,6 +524,15 @@
 			buildConfigurations = (
 				CB1241992C5DC83700B50D89 /* Debug */,
 				CB12419A2C5DC83700B50D89 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB4D41D32C92CA700012187E /* Build configuration list for PBXNativeTarget "tkm_circleCI_fieldTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB4D41D12C92CA700012187E /* Debug */,
+				CB4D41D22C92CA700012187E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
