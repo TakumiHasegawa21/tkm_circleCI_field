@@ -9,11 +9,20 @@ executors:
 jobs:
   test:
     executor: ios-executor
+    environment:
+      TERM: dumb  # 環境変数 TERM を設定
     steps:
       - checkout
+      - restore_cache:
+          keys:
+            - v1-bundle-cache-{{ checksum "Gemfile.lock" }}
       - run:
           name: Install dependencies
           command: bundle install
+      - save_cache:
+          paths:
+            - ./vendor/bundle
+          key: v1-bundle-cache-{{ checksum "Gemfile.lock" }}
       - run:
           name: Run fastlane tests
           command: bundle exec fastlane test
