@@ -10,7 +10,8 @@ jobs:
   test:
     executor: ios-executor
     environment:
-      TERM: dumb  # 環境変数 TERM を設定
+      TERM: dumb
+      GitHub Personal Access Token: << pipeline.parameters.github_token >>
     steps:
       - checkout
       - restore_cache:
