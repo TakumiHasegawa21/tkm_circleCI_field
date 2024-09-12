@@ -1,13 +1,37 @@
 version: 2.1
 
 executors:
-  macos-executor:
+  ios-executor:
     macos:
-      xcode: "15.2.0"  # 使用するXcodeのバージョンを指定
+      xcode: "15.3.0"  # Xcodeバージョンは必要に応じて変更
+    working_directory: ~/project
 
 jobs:
-  build:
-    docker:
-      - image: cimg/node:lts
+  test:
+    executor: ios-executor
+    environment:
+      TERM: dumb  # 環境変数 TERM を設定
     steps:
-      - run: echo "hello world"
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-bundle-cache-{{ checksum "Gemfile.lock" }}
+      - run:
+          name: Install dependencies
+          command: bundle install
+      - save_cache:
+          paths:
+            - ./vendor/bundle
+          key: v1-bundle-cache-{{ checksum "Gemfile.lock" }}
+      - run:
+          name: Run fastlane tests
+          command: bundle exec fastlane test
+      - run:
+          name: Run danger
+          command: bundle exec danger
+
+workflows:
+  version: 2
+  test-and-danger:
+    jobs:
+      - test
