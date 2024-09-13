@@ -21,9 +21,9 @@
 		8D13C477A689FBFD24C2F90F7C525C1E /* Pods-tkm_circleCI_field-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-tkm_circleCI_field-acknowledgements.markdown"; sourceTree = "<group>"; };
 		98946C59A353086FD1927092A5D16103 /* Pods-tkm_circleCI_field-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-tkm_circleCI_field-umbrella.h"; sourceTree = "<group>"; };
 		9C9779F83E3AD69063A7B6E9091DCFFD /* Pods-tkm_circleCI_field.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-tkm_circleCI_field.modulemap"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		ABD6DB9CECE38F0DD2F4CF2B83292042 /* Pods-tkm_circleCI_field-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-tkm_circleCI_field-acknowledgements.plist"; sourceTree = "<group>"; };
-		D99943F9CAA0A725A99C3E9EEA337521 /* Pods-tkm_circleCI_field */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-tkm_circleCI_field"; path = Pods_tkm_circleCI_field.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D99943F9CAA0A725A99C3E9EEA337521 /* Pods_tkm_circleCI_field.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tkm_circleCI_field.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +91,7 @@
 		DB4B4F2AC197F1CAF98BF74F4141DA52 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D99943F9CAA0A725A99C3E9EEA337521 /* Pods-tkm_circleCI_field */,
+				D99943F9CAA0A725A99C3E9EEA337521 /* Pods_tkm_circleCI_field.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -125,7 +125,7 @@
 			);
 			name = "Pods-tkm_circleCI_field";
 			productName = Pods_tkm_circleCI_field;
-			productReference = D99943F9CAA0A725A99C3E9EEA337521 /* Pods-tkm_circleCI_field */;
+			productReference = D99943F9CAA0A725A99C3E9EEA337521 /* Pods_tkm_circleCI_field.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
