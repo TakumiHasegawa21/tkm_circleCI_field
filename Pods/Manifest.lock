@@ -1,3 +1,20 @@
-PODFILE CHECKSUM: 6f1c7a75ce9dd3fd04e8086274d7f0503088d6cd
+PODS:
+  - IBLinter (0.5.0)
+  - SwiftLint (0.56.2)
+
+DEPENDENCIES:
+  - IBLinter
+  - SwiftLint
+
+SPEC REPOS:
+  trunk:
+    - IBLinter
+    - SwiftLint
+
+SPEC CHECKSUMS:
+  IBLinter: 7d28cbb7b579ca80690b56f6c8d22092a672967c
+  SwiftLint: bd7cfb914762ab5f0cbb632964849571db075706
+
+PODFILE CHECKSUM: 84ba6f8e46f54025a43dd1159008ae3ca1bcce2c
 
 COCOAPODS: 1.13.0
